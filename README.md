@@ -8,7 +8,7 @@ This is a multi-day, agile development challenge that will require you to create
 - There is no starter repo, you are responsible for creating a git repo, following proper git workflow, and pushing code to github.
 - The role of the "client" will be played by one of your dear instructors.  You will demo your app to the client after each iteration.  The "client" will describe what they need and inform your decisions about what the next iteration of the app should be.
 - The role of the "senior engineer" will also be played by one of your dear instructors.  The engineer will consult with you on testing, design decisions, or provide code review.
-- You will work in pairs.  You will switch code bases each day.  You are not your code.  When you meet with your new pair, you will discuss which code base to move forward with.  You will need to get your pair up to speed or get up to speed on each newish code base.
+- You will work in pairs and at some point you will switch code bases. (Say it with me: "I am not my code").  When you meet with your new pair, you will discuss which code base to move forward with.  You will need to get your pair up to speed or get up to speed on each new-ish code base.
 - You will deploy each iteration to Heroku.
 
 The first two iterations are provided below.  After they are complete, you will meet with your "client" and your "senior engineer".
