@@ -18,6 +18,7 @@ The iterations are provided below.  After it is complete, you will meet with you
 - Add functionality for managing products to the included Rails application skeleton.  It'll be helpful to have a baseline where the client can enter products into the system, manage the products, and view them.
 - We will not need any authentication mechanism.
 - Please include styles for the website and image placeholders for the products
+- Have RSpec model, controller, and feature tests
 
 Move through the the items above as quickly as you can, without much attachment.  These are just a starting point.  As we gather feedback and learn more about what it takes to develop the app, we want to be able to change these easily.  'Cause we're doing Agile.
 
