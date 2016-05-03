@@ -8,6 +8,7 @@ gem 'thin'
 
 gem 'jquery-rails'
 gem 'haml-rails'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'pry-rails'
