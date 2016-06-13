@@ -183,6 +183,3 @@ DEPENDENCIES
   rspec-rails
   thin
   uglifier
-
-BUNDLED WITH
-   1.11.2
