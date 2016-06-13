@@ -1,1 +1,11 @@
 %h1 Items
+
+%ul
+  - @items.each do |item|
+    %li= item.name.upcase
+
+
+%a{ :href => "items/new"}
+  %strong
+    Create A New Item
+
