@@ -1,12 +1,11 @@
-- if @product.errors.any?
-  #error_explanation
+- if @item.errors.any?
   %h2
-    = pluralize(@product.errors.count, "error")
+    = pluralize(@items.errors.count, "error")
     prohibited
-    this product from being saved:
+    this items from being saved:
   %ul
-    - @product.errors.full_messages.each do |msg|
-    %li= msg
+    - @items.errors.full_messages.each do |msg|
+      %li= msg
 
 = form_for @item do |f|
   %p
