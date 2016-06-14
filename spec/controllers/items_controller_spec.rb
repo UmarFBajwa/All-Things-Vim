@@ -87,7 +87,12 @@ let!(:item) {create :item}
   end
 
   describe "DELETE #destroy" do
-    it "redirects to the index page" do
+    it 'responds with a status of 302' do
+      delete :destroy, id: item.id
+      expect(response.status).to eq(302)
+    end
+    it 'decrements the items in the database by 1' do
+      expect{delete :destroy, id: item.id}.to change{Item.count}.by(-1)
     end
   end
 
