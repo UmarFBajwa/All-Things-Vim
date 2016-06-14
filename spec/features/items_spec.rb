@@ -12,7 +12,9 @@ RSpec.feature "Items", type: :feature, js: true do
     visit new_item_path
     fill_in 'Name', with: item.name
     fill_in 'Price', with: item.price
+    fill_in 'Quantity', with: 2
     fill_in 'Description', with: item.description
+    fill_in "Image url", with: "http://www.google.com"
     click_on('Submit')
     expect(page).to have_content(item.name.upcase)
 

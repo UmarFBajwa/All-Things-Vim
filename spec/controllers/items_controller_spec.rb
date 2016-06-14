@@ -36,7 +36,7 @@ let!(:item) {create :item}
   end
 
   describe "POST #create" do
-    let(:params) {{"item"=>{"name"=>"Danny", "price"=>20, "description"=>"What?"}}}
+    let(:params) {{"item"=>{"name"=>"Danny", "price"=>20, "quantity"=>2, "description"=>"What?"}}}
     it 'increments items in the database by 1' do
       expect{post :create, params}.to change{Item.count}.by(1)
     end
