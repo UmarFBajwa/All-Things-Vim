@@ -1,0 +1,33 @@
+- if @item.errors.any?
+  %h2
+    = pluralize(@items.errors.count, "error")
+    prohibited
+    this items from being saved:
+  %ul
+    - @items.errors.full_messages.each do |msg|
+      %li= msg
+
+= form_for @item do |f|
+  %p
+    = f.label :name
+    = f.text_field :name
+
+  %p
+    = f.label :price
+    = f.text_field :price
+
+  %p
+    = f.label :quantity
+    = f.text_field :quantity
+
+  %p
+    = f.label :description
+    = f.text_field :description
+
+  %p
+    = f.label :image_url
+    = f.text_field :image_url
+
+  %p
+    = f.submit(type = "Submit")
+

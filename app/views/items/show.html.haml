@@ -1,0 +1,26 @@
+%h1
+  %center
+    = @item.name.upcase
+
+%img{src: @item.image_url}
+
+%p
+  = "PRICE:"
+
+%p
+  = "$" + @item.price.to_s
+
+%p
+  = "QUANTITY:"
+
+%p
+  = @item.quantity
+
+%p
+  = "DESCRIPTION:"
+
+%p
+  = @item.description
+
+%p
+  =link_to 'Home', root_path
