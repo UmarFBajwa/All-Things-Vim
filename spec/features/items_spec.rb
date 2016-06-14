@@ -7,31 +7,32 @@ RSpec.feature "Items", type: :feature, js: true do
     visit root_path
     expect(page).to have_content(item.name)
   end
-  context "Create A New Item" do
+
     it "creates a new item" do
-      visit root_path
+      visit new_item_path
       fill_in 'Name', with: item.name
       fill_in 'Price', with: item.price
       fill_in 'Description', with: item.description
-      click_on('Create A New Item')
+      click_on('Submit')
       expect(page).to have_content(item.description)
     end
-  end
 
-  describe "item page" do
     before(:each) do
-      visit item_path(item.id)
+      visit root_path
     end
 
     it "displays a form and updates an existing post" do
-      new_name = "Danny"
-      fill_in('Name', with: new_name)
-      click_on('Update')
-      expect(page).to have_content(new_name)
+      new_price = 20
+      click_on('Edit')
+      visit edit_item_path(item.id)
+      fill_in('Name', with: new_price)
+      click_on('Submit')
+      expect(page).to have_content(new_price)
     end
     it "has a button that deletes the item" do
-      click_on('Delete item')
+      click_on('Delete')
+      page.driver.browser.switch_to.alert.accept
       expect(page).to_not have_content(item.name)
     end
-  end
+
 end
