@@ -4,14 +4,39 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
+  end
+
+  def edit
+    @item = Item.find(params[:id])
   end
 
   def create
     @item = Item.new(params[:item])
 
-    @item.save
-    redirect_to @item
+    if @item.save
+      redirect_to @item
+    else
+      render 'new'
+    end
   end
+
+  def update
+    @item = item.find(params[:id])
+
+    if @item.update(item_params)
+      redirect_to @item
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @item = item.find(params[:id])
+    @item.destroy
+    redirect_to item_path
+  end
+
 
   def show
     @item = Item.find(params[:id])

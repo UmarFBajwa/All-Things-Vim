@@ -2,10 +2,13 @@
 
 %ul
   - @items.each do |item|
-    %li= item.name.upcase
+    %li= item.name
+    =link_to 'Edit', edit_item_path(item)
+
 
 
 %a{ :href => "items/new"}
   %strong
     Create A New Item
+
 
