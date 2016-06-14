@@ -16,6 +16,20 @@ RSpec.describe Item, type: :model do
         }.not_to change{Item.count}
     end
 
+     it "returns false if price is nil" do
+      item.price = nil
+      expect {
+        item.save
+        }.not_to change{Item.count}
+    end
+
+     it "returns false if description is nil" do
+      item.description = nil
+      expect {
+        item.save
+        }.not_to change{Item.count}
+    end
+
     it { should validate_presence_of :name }
     it { should validate_presence_of :price }
     it { should validate_presence_of :description }
