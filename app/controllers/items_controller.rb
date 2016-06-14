@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  http_basic_authenticate_with name: "admin", password: "secret", except: [:index, :show]
+
   def index
     @items = Item.all
   end
