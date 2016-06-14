@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   root 'items#index'
 
+  get '/admin', to: 'admins#index'
+
 end

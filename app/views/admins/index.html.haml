@@ -1,0 +1,16 @@
+%h1 Items
+
+%table
+  %tr
+    %th Name
+  - @items.each do |item|
+    %tr
+      %td= item.name
+      %td=link_to 'Show', item_path(item)
+      %td=link_to 'Edit', edit_item_path(item)
+      %td=link_to 'Delete', item_path(item), method: :delete, data: {confirm: 'Are you sure?'}
+
+%p
+  %a{ :href => "items/new"}
+    %strong
+      Create A New Item
