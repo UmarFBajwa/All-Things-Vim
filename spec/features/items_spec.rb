@@ -25,8 +25,8 @@ RSpec.feature "Items", type: :feature, js: true do
   it "displays a specific item" do
     click_on('Show')
     expect(page).to have_content(item.name.upcase)
-    # expect(page).to have_content(item.price)
-    # expect(page).to have_content(item.description)
+    expect(page).to have_content(item.price)
+    expect(page).to have_content(item.description)
   end
 
   it "displays a form and updates an existing item" do
