@@ -46,7 +46,6 @@ let!(:item) {create :item}
     end
 
     # it "redirects to the index page" do
-
     # end
   end
 
@@ -66,8 +65,19 @@ let!(:item) {create :item}
     end
   end
 
-  # describe "PATCH #update" do
-  # end
+  describe "PATCH #update" do
+    let(:params) {{"item"=>{"name"=>item.name, "price"=>20, "description"=>"Yes"}, "id"=>item.id}}
+    context ', "description"=>"Yes"on valid params' do
+      it 'responds with a status of 302' do
+        patch :update, params
+        expect(response.status).to eq(302)
+      end
+      it 'updates an item in the database' do
+        patch :update, params
+        expect(item.reload.price).to eq(20)
+      end
+    end
+  end
 
   # describe "DELETE #destroy" do
   #   it "redirects to the index page" do
