@@ -30,7 +30,7 @@ RSpec.feature "Items", type: :feature, js: true do
   end
 
   it "displays a form and updates an existing item" do
-    new_price = 20
+    new_price = "DANNY"
     click_on('Edit')
     visit edit_item_path(item.id)
     fill_in('Name', with: new_price)
