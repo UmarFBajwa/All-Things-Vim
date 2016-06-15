@@ -3,27 +3,33 @@
 
 %div.container
   = form_for @item do |f|
-    %p
+    %span
       = f.label :name
+    %br
       = f.text_field :name
 
-    %p
+    %span
       = f.label :price
+    %br
       = f.text_field :price
 
-    %p
+    %span
       = f.label :quantity
+    %br
       = f.text_field :quantity
 
-    %p
+    %span
       = f.label :description
+    %br
       = f.text_field :description
 
-    %p
+    %span
       = f.label :image_url
+    %br
       = f.text_field :image_url
 
-
+    %br
+    %br
     %center
       %btn.form_button= f.submit(type = "Submit")
 

@@ -22,10 +22,6 @@ body {
   color: white;
 }
 
-.container {
-
-}
-
 .navbar {
     background-color: #F8F8F8;
     border-color: #E7E7E7;
@@ -48,7 +44,7 @@ input[type="submit"] {
 .container {
   margin: 0 auto;
   width: 80%;
-  text-align: left;
+  text-align: center;
 }
 
 .item_label {
@@ -75,4 +71,8 @@ a {
 
 .row {
   text-align: center;
+}
+
+.admin-table {
+  background-color: grey;
 }

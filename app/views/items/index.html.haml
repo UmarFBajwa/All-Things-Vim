@@ -11,9 +11,9 @@
           %br
           %img.item_images{src: item.image_url}
           %br
-          %span=link_to 'Show', item_path(item)
-          %span=link_to 'Edit', edit_item_path(item)
-          %span=link_to 'Delete', item_path(item), method: :delete, data: {confirm: 'Are you sure?'}
+          %span.item-a=link_to 'Show', item_path(item)
+          %span.item-a=link_to 'Edit', edit_item_path(item)
+          %span.item-a=link_to 'Delete', item_path(item), method: :delete, data: {confirm: 'Are you sure?'}
 
 %br
 %br
