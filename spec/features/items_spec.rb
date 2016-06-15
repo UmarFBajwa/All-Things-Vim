@@ -1,4 +1,5 @@
 require 'rails_helper'
+require_relative '../support/auth_helper'
 
 RSpec.feature "Items", type: :feature, js: true do
   let!(:item) {create :item}
