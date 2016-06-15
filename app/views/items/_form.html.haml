@@ -1,11 +1,5 @@
-- if @item.errors.any?
-  %h2
-    = pluralize(@items.errors.count, "error")
-    prohibited
-    this items from being saved:
-  %ul
-    - @items.errors.full_messages.each do |msg|
-      %li= msg
+-# -flash.each do |key, value|
+-#   %div{:class=>"alert alert-#{key}"}= value
 
 = form_for @item do |f|
   %p

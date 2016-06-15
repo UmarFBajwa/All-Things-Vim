@@ -21,9 +21,11 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
 
     if @item.save
+      flash[:success] = "WINNING"
       redirect_to @item
     else
-      render 'new'
+      flash[:error] = "FAIL"
+      redirect_to new_item_path
     end
   end
 
@@ -31,15 +33,18 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
 
     if @item.update(item_params)
+      flash[:success] = "WINNING"
       redirect_to @item
     else
-      render 'edit'
+      flash[:error] = "FAIL"
+      redirect_to edit_item_path(@item.id)
     end
   end
 
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
+    flash[:success] = "DESTROYED"
     redirect_to root_path
   end
 
