@@ -65,3 +65,7 @@ input[type="submit"] {
   width: 80%;
   text-align: left;
 }
+
+.item_label {
+  font-weight: bold;
+}
