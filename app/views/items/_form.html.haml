@@ -1,27 +1,29 @@
 -# -flash.each do |key, value|
 -#   %div{:class=>"alert alert-#{key}"}= value
 
-= form_for @item do |f|
-  %p
-    = f.label :name
-    = f.text_field :name
+%div.container
+  = form_for @item do |f|
+    %p
+      = f.label :name
+      = f.text_field :name
 
-  %p
-    = f.label :price
-    = f.text_field :price
+    %p
+      = f.label :price
+      = f.text_field :price
 
-  %p
-    = f.label :quantity
-    = f.text_field :quantity
+    %p
+      = f.label :quantity
+      = f.text_field :quantity
 
-  %p
-    = f.label :description
-    = f.text_field :description
+    %p
+      = f.label :description
+      = f.text_field :description
 
-  %p
-    = f.label :image_url
-    = f.text_field :image_url
+    %p
+      = f.label :image_url
+      = f.text_field :image_url
 
-  %p
-    = f.submit(type = "Submit")
+
+    %center
+      %btn.form_button= f.submit(type = "Submit")
 

@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 body {
   padding-top: 5%;
   max-width: 65%;
@@ -30,6 +31,63 @@ body {
     border-color: #E7E7E7;
 }
 
-.homething {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form_button {
+  color: white;
+}
+
+input[type="submit"] {
+  background-color: #808000;
+  border-radius: 10px;
+}
+
+.item_head {
+  font-weight: 10px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  text-align: left;
+}
+
+.item_label {
+  font-weight: bold;
 
 }

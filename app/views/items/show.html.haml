@@ -1,27 +1,28 @@
-%h1
-  %center
+%center
+  %h1
     = @item.name.upcase
 
-%img{src: @item.image_url}
+  %div.jumbotron
+    %img{src: @item.image_url}
 
-%p
-  = "PRICE:"
+    %p.item_label
+      = "PRICE:"
 
-%p
-  -# = "$" + @item.price.to_s
-  =number_to_currency(@item.price)
+    %p
+      -# = "$" + @item.price.to_s
+      =number_to_currency(@item.price)
 
-%p
-  = "QUANTITY:"
+    %p.item_label
+      = "QUANTITY:"
 
-%p
-  = @item.quantity
+    %p
+      = @item.quantity
 
-%p
-  = "DESCRIPTION:"
+    %p.item_label
+      = "DESCRIPTION:"
 
-%p
-  = @item.description
+    %p
+      = @item.description
 
-%p
-  =link_to 'Home', root_path
+    -# %p
+    -#   =link_to 'Home', root_path
