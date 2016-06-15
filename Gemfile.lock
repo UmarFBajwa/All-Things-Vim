@@ -230,6 +230,3 @@ DEPENDENCIES
   shoulda
   thin
   uglifier
-
-BUNDLED WITH
-   1.12.5
