@@ -1,9 +1,14 @@
 require 'rails_helper'
+require_relative '../support/auth_helper.rb'
 
 RSpec.describe ItemsController, type: :controller do
 let(:item2) {build :item}
 let!(:item) {create :item}
+include AuthHelper
 
+  before(:each) do
+    http_login
+  end
 
 
   describe "GET #index" do
