@@ -13,3 +13,55 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form_button {
+  color: white;
+}
+
+input[type="submit"] {
+  background-color: #808000;
+  border-radius: 10px;
+}
+
+.item_head {
+  font-weight: 10px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  text-align: left;
+}
