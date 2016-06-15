@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  # factory :admin do
+
+  # end
+
   factory :item do
     name { Faker::Name.name }
     price { rand(0..1000) }

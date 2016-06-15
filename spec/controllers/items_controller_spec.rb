@@ -4,6 +4,8 @@ RSpec.describe ItemsController, type: :controller do
 let(:item2) {build :item}
 let!(:item) {create :item}
 
+
+
   describe "GET #index" do
     it "renders the index page" do
       get :index
