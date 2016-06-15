@@ -21,4 +21,7 @@ Happy Hacking, now GO Build! <3
 -As a User I can view a specific item
 -As a User I can delete an Item
 -As a User I can update an item
-
+-As an Admin only I have access to item creation, edit, and deletion
+-As an Admin I have a separate view (add, remove, edit) located at '/admin'
+-As an Admin I can access via http_basic_authenticate_with_name
+-Items include Name, Price, Quantity, Description
