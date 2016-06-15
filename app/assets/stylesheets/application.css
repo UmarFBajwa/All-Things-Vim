@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+body {
+  padding-top: 5%;
+  max-width: 65%;
+  margin: 0 auto;
+  background: #36465D;
+  color: white;
+}
+
+.container {
+
+}
+
+.navbar {
+    background-color: #F8F8F8;
+    border-color: #E7E7E7;
+}
+
+.homething {
+
+}
