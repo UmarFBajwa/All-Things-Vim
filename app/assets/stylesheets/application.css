@@ -31,49 +31,13 @@ body {
     border-color: #E7E7E7;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .form_button {
   color: white;
 }
 
 input[type="submit"] {
-  background-color: #808000;
+  background-color: #265a88;
+  color: white;
   border-radius: 10px;
 }
 
@@ -90,4 +54,25 @@ input[type="submit"] {
 .item_label {
   font-weight: bold;
 
+}
+
+.jumbotron {
+  background-color: #36465D;
+}
+
+img {
+  height: 250px;
+  width: 250px;
+}
+
+input {
+  color: black;
+}
+
+a {
+  color: white;
+}
+
+.row {
+  text-align: center;
 }
