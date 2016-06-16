@@ -1,0 +1,13 @@
+%div.container
+  = form_for @user, url: { action: 'new' } do |f|
+    %span
+      = f.label :email
+    %br
+      = f.text_field :email
+
+    %span
+      = f.label :password
+    %br
+      = f.text_field :password
+
+      =f.submit(class: 'btn btn-primary', value: "Sign In")

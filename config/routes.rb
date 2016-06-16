@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'items/index'
 
+  resources :users
   resources :items
 
   root 'items#index'
