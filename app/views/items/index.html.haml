@@ -13,20 +13,12 @@
 
           %br
           %span.item-a=link_to 'Show', item_path(item)
-          %span.item-a=link_to 'Edit', edit_item_path(item)
-          %span.item-a=link_to 'Delete', item_path(item), method: :delete, data: {confirm: 'Are you sure?'}
+          -if current_user.admin
+            %span.item-a=link_to 'Edit', edit_item_path(item)
+            %span.item-a=link_to 'Delete', item_path(item), method: :delete, data: {confirm: 'Are you sure?'}
 
 %br
 %br
 %center
-  %button.btn.btn-primary= link_to 'Create an item', new_item_path
-
-
-
-
-
-
-
-
-
-
+  -if current_user.admin
+    %button.btn.btn-primary=link_to 'Create an item', new_item_path
