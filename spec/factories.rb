@@ -1,9 +1,10 @@
 FactoryGirl.define do
-  factory :category_item do
+  factory :categories_item do
     
   end
+
   factory :category do
-    
+
   end
   factory :user do
     name "MyString"
