@@ -11,7 +11,7 @@ require 'faker'
 
  User.delete_all
   User.create(name: "Tom", email: "tom@tom.com", password: "tomtom")
-  User.create(name: "Tim", email: "tim@tim.com", password: "timtim")
+  User.create(name: "Tim", email: "tim@tim.com", password: "timtim", admin: true)
 
 
 # This file should contain all the record creation needed to seed the database with its default values.
