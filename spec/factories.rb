@@ -1,19 +1,22 @@
 FactoryGirl.define do
   factory :categories_item do
-    
+
   end
 
   factory :category do
-
+    name "Category"
   end
+
   factory :user do
-    name "MyString"
-    email "MyString"
-    password_digest "MyString"
-  end
-  # factory :admin do
+    name "Tim"
+    email "tim@tim.com"
+    password "timtim"
 
-  # end
+    factory :admin do
+      admin { true  }
+    end
+  end
+
 
   factory :item do
     name { Faker::Name.name }
