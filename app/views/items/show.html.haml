@@ -5,6 +5,11 @@
   %div.jumbotron
     %img{src: @item.image_url}
 
+    %p Categories:
+    %ul.list-unstyled
+      - @item.categories.each do |category|
+        %li= link_to category.name, category_path(category)
+
     %p.item_label
       = "PRICE:"
 
