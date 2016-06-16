@@ -18,12 +18,21 @@
       .container
         %ul.list.nav.navbar-nav
           %li
-            %li.homething
+            %li.navbaritem
               =link_to 'Home', root_path
-            %li.homething
-              =link_to 'Admin', admin_path
-    %ul
-      -flash.each do |type, message|
-        %div{:class=>"alert alert-#{type}"}= message
+            -if logged_in && current_user.admin
+              %li.navbaritem
+                =link_to 'Admin', admin_path
+            -if logged_in
+              %li
+                %a{href: '/logout'}
+                  %span Logout
+            -else
+              %li
+                %a{href: '/register'}
+                  %span Register
+              %li
+                %a{href: '/login'}
+                  %span Login
 
     = yield
