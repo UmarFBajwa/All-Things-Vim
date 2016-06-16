@@ -13,16 +13,20 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @categories = Category.all
   end
 
   def edit
     @item = Item.find(params[:id])
+    @categories = Category.all
   end
 
   def create
     @item = Item.new(item_params)
-
     if @item.save
+      params[:categories].each do |id|
+        CategoriesItem.create(category_id: id, item_id: @item.id)
+      end
       flash[:success] = "WINNING"
       redirect_to @item
     else
@@ -35,6 +39,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
 
     if @item.update(item_params)
+      @item.categories_items.each{ |ci| ci.delete }
+      params[:categories].each do |id|
+        CategoriesItem.create(category_id: id, item_id: @item.id)
+      end
       flash[:success] = "WINNING"
       redirect_to @item
     else

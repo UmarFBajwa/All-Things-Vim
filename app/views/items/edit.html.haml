@@ -1,6 +1,41 @@
 %h1
   Editing Item
 
-= render 'form'
+-# -flash.each do |key, value|
+-#   %div{:class=>"alert alert-#{key}"}= value
 
+%div.container
+  = form_tag item_path, method: :put do |f|
+    .form_field
+      = label_tag :name
+      = text_field_tag 'item[name]', @item.name
+
+    .form_field
+      = label_tag :categories
+      - @categories.each do |category|
+        = label_tag category.name
+        = check_box_tag 'categories[]', category.id, @item.categories.include?(category)
+
+    .form_field
+      = label_tag :price
+      = number_field_tag 'item[price]', @item.price, { step: 'any' }
+
+    .form_field
+      = label_tag :quantity
+      = number_field_tag 'item[quantity]', @item.quantity
+
+    .form_field
+      = label_tag :description
+      = text_field_tag 'item[description', @item.description
+
+    .form_field
+      = label_tag :image_url
+      = text_field_tag 'item[image_url]', @item.image_url
+
+    %br
+    %br
+    %center
+      %btn.form_button= submit_tag(type = "Update Product")
+
+%br
 =link_to 'Home', root_path
