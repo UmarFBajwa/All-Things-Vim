@@ -2,9 +2,11 @@ Rails.application.routes.draw do
 
   resources :users
   resources :items
-  resources :sessions
+  # resources :sessions
 
-  get '/login'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
 
   root 'items#index'
 

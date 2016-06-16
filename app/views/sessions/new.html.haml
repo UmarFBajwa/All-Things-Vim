@@ -1,5 +1,5 @@
 %div.container
-  = form_for @user, url: { action: 'new' } do |f|
+  = form_for :session, url: login_path do |f|
     %span
       = f.label :email
     %br
