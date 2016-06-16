@@ -24,8 +24,8 @@
     %p
       = @item.description
 
-
-    %span=link_to 'Edit', edit_item_path(@item)
-    -# %p
-    %span=link_to 'Home', root_path
-    %span=link_to 'Delete', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}
+    -if current_user
+      -if current_user.admin
+        %span=link_to 'Edit', edit_item_path(@item)
+        %span=link_to 'Home', root_path
+        %span=link_to 'Delete', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}
