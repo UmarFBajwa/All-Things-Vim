@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get '/register', to: 'users#new'
 
-  root 'items#index'
+  root 'categories#index'
 
   get '/admin', to: 'admins#index'
 
