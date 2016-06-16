@@ -1,8 +1,23 @@
-%h1
-  %center Items
-%br
-
+%h1 Admin
 .container
+  %h2 Categories
+  %table.table.table-striped
+    %thead
+      %tr
+        %th.admin-table-header Name
+        %th.admin-table-header Edit
+        %th.admin-table-header Delete
+    %tbody
+      -@categories.each do |category|
+        %tr
+          %td.admin-table
+            =link_to category.name, category_path(category)
+          %td.admin-table
+            =link_to 'Edit', edit_category_path(category)
+          %td.admin-table
+            =link_to 'Delete', category_path(category), method: :delete, data: {confirm: 'Are you sure?'}
+
+  %h2 Items
   %table.table.table-striped
     %thead
       %tr
