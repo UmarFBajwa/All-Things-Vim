@@ -3,10 +3,12 @@
 %table
   %tr
     %th Name
-    %th Edit
-    %th Delete
+    - if current_user && current_user.admin
+      %th Edit
+      %th Delete
   - @categories.each do |category|
     %tr
       %td= link_to category.name, category_path(category)
-      %td= link_to 'Edit', edit_category_path(category)
-      %td= link_to 'Delete', category_path(category), method: :delete, data: { confirm: "Are you sure?" }
+      - if current_user && current_user.admin
+        %td= link_to 'Edit', edit_category_path(category)
+        %td= link_to 'Delete', category_path(category), method: :delete, data: { confirm: "Are you sure?" }
