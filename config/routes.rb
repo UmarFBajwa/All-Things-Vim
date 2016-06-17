@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :users, except: :index
   resources :items
   resources :categories
-  # resources :sessions
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
