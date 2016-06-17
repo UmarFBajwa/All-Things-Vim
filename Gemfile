@@ -24,6 +24,5 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'database_cleaner'
-
+  gem 'dotenv-rails'
 end
-

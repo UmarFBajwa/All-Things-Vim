@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     @user= User.new(user_params)
 
     if @user.save
+      WelcomeMailer.welcome_email(@user).deliver
       flash[:login] = "Successful Registration"
       session[:user_id] = @user.id
       redirect_to root_path
