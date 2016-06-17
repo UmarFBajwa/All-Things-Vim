@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
       redirect_to categories_path
     else
       flash[:error] = "FAIL"
-      redirect_to new_category_path
+      render :new
     end
   end
 
@@ -38,7 +38,7 @@ class CategoriesController < ApplicationController
       redirect_to @category
     else
       flash[:error] = "FAIL"
-      redirect_to edit_category_path(@category.id)
+      render :edit
     end
   end
 
