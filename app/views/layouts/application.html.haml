@@ -20,10 +20,12 @@
           %li
             %li.navbaritem
               =link_to 'Home', root_path
-            -if logged_in && current_user.admin
-              %li.navbaritem
-                =link_to 'Admin', admin_path
             -if logged_in
+              %li
+                = link_to 'My Cart', my_cart_path
+              -if current_user.admin
+                %li.navbaritem
+                  =link_to 'Admin', admin_path
               %li
                 %a{href: '/logout'}
                   %span Logout
@@ -34,6 +36,7 @@
               %li
                 %a{href: '/login'}
                   %span Login
+
     - flash.each do |name, msg|
       - if msg.is_a?(String)
         %div{:class => "alert alert-#{name == :notice ? "success" : "error"}"}
