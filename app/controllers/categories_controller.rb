@@ -11,6 +11,11 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @items = @category.items
+  end
+
+  def edit
+    @category = Category.find(params[:id])
   end
 
   def create
@@ -18,7 +23,7 @@ class CategoriesController < ApplicationController
 
     if @category.save
       flash[:success] = "CREATED"
-      redirect_to @category
+      redirect_to categories_path
     else
       flash[:error] = "FAIL"
       redirect_to new_category_path
@@ -41,7 +46,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
     flash[:success] = "DESTROYED"
-    redirect_to root_path
+    redirect_to categories_path
   end
 
   private

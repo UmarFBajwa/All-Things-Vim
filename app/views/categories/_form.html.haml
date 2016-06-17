@@ -1,0 +1,12 @@
+%div.container
+  = form_for @category do |f|
+    %span
+      = f.label :name
+    %br
+      = f.text_field :name
+
+    %br
+    %br
+    %center
+      %btn.form_button= f.submit(type = "Submit")
+

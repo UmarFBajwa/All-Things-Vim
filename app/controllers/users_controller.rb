@@ -1,13 +1,6 @@
 class UsersController < ApplicationController
   before_action :check_user, except: [:new, :create]
   include UsersHelper
-  # def index
-  #   @user = User.authenticate(user_params)
-  #   if @user
-  #     session[:user_id] = @user.index
-  #     redirect_to root_path
-  #   end
-  # end
 
   def new
     @user = User.new
@@ -17,6 +10,7 @@ class UsersController < ApplicationController
     @user= User.new(user_params)
 
     if @user.save
+      SendEmailJob.set(wait: 5.seconds).perform_later(@user)
       flash[:login] = "Successful Registration"
       session[:user_id] = @user.id
       redirect_to root_path

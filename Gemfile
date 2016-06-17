@@ -10,6 +10,7 @@ gem 'thin'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'rails_12factor', group: :production
+gem 'delayed_job_active_record'
 
 group :development, :test do
   gem 'pry-rails'
@@ -24,6 +25,5 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'database_cleaner'
-
+  gem 'dotenv-rails'
 end
-
