@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
       redirect_to @item
     else
       flash[:error] = "FAIL"
-      redirect_to new_item_path
+      render :new
     end
   end
 
@@ -47,22 +47,19 @@ class ItemsController < ApplicationController
       redirect_to @item
     else
       flash[:error] = "FAIL"
-      redirect_to edit_item_path(@item.id)
+      render :edit
     end
   end
 
   def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
+    item = Item.find(params[:id])
+    item.destroy
     flash[:success] = "DESTROYED"
     redirect_to root_path
   end
 
-  # def admin
-  #   @items = Item.all
-  # end
-
   private
+
   def item_params
     params.require(:item).permit(:name, :price, :quantity, :description, :image_url)
   end
