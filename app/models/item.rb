@@ -3,4 +3,14 @@ class Item < ActiveRecord::Base
   has_many :categories_items
   has_many :categories, through: :categories_items
   has_many :ordered_items
+
+  def reduce_stock(amount)
+    self.quantity = self.quantity - amount
+    save
+  end
+
+  def buyout
+    self.quantity = 0
+    save
+  end
 end
