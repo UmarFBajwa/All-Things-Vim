@@ -35,5 +35,6 @@ RSpec.describe Item, type: :model do
     it { should validate_presence_of :description }
     it { should have_many :categories_items }
     it { should have_many :categories }
+    it { should have_many :ordered_items }
   end
 end
