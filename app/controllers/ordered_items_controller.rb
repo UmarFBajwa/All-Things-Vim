@@ -5,9 +5,9 @@ class OrderedItemsController < ApplicationController
     else
       order = current_user.orders.last
     end
-      basket_item = OrderedItem.new(ordered_item_params)
-      basket_item.order_id = order.id
-      basket_item.save
+    basket_item = OrderedItem.new(ordered_item_params)
+    basket_item.order_id = order.id
+    basket_item.save
     if request.xhr?
       render :create, layout: false
     else
@@ -17,7 +17,6 @@ class OrderedItemsController < ApplicationController
   end
 
   private
-
   def ordered_item_params
     params.require(:ordered_item).permit(:order_id, :item_id, :order_quantity)
   end

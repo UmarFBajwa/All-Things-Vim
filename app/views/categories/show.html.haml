@@ -14,7 +14,7 @@
           %span.item-a=link_to 'Show', item_path(item)
           %br
           -if current_user
-            = form_for(:ordered_item, {url: ordered_items_path, html: {class: 'addItem'}, remote: true}) do |f|
+            = form_for(:ordered_item, {url: ordered_items_path, html: {class: 'addItem'}}) do |f|
               = f.number_field :order_quantity
               = f.hidden_field :item_id, {value: item.id}
               = f.submit "Add to basket"

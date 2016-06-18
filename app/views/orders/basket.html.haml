@@ -1,16 +1,19 @@
 %h2 My Cart
 
-%ul
-  - @order.ordered_items.each do |ordered_item|
-    %li
-      = ordered_item.item.name
-      %ul
-        %li
-          = "Price: #{number_to_currency(ordered_item.item.price)}"
-          %br
-          = "Stock: #{ordered_item.item.quantity}"
-      = "Amount Ordered: #{ordered_item.order_quantity}"
-      %hr
+- if @order.nil?
+  %h3 You currently don't have any items in your basket
+- else
+  %ul
+    - @order.ordered_items.each do |ordered_item|
+      %li
+        = ordered_item.item.name
+        %ul
+          %li
+            = "Price: #{number_to_currency(ordered_item.item.price)}"
+            %br
+            = "Stock: #{ordered_item.item.quantity}"
+        = "Amount Ordered: #{ordered_item.order_quantity}"
+        %hr
 
-= form_for :orders, {url: checkout_path, method: 'put'} do |f|
-  = f.submit 'Checkout'
+  = form_for :orders, {url: checkout_path, method: 'put'} do |f|
+    = f.submit 'Checkout'
