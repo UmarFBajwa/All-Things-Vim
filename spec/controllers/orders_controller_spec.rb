@@ -69,7 +69,7 @@ RSpec.describe OrdersController, type: :controller do
     it 'redirects to the root path' do
       put :update, {}, { user_id: @user.id }
 
-      expect(response).to redirect_to root_path
+      expect(response).to redirect_to thank_you_path
     end
   end
 end
