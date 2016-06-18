@@ -1,4 +1,11 @@
-%h2 My Cart
+%h2
+  My Cart
+  %small
+    Number of Items:
+    = @order.total_items
+    |
+    Total:
+    = number_to_currency(@order.total_cost)
 
 - if @order.nil?
   %h3 You currently don't have any items in your basket
