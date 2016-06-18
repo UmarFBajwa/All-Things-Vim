@@ -10,12 +10,15 @@ class OrdersController < ApplicationController
       messages << ordered_item.check_stock_availability
     end
 
-    flash[:warning] = messages.join(', ') unless messages.empty?
+    flash[:warning] = messages.join(', ') unless messages.join == ''
     @order.checked_out = true
     @order.save
     # Mail them
-    # redirect_to thank_you_path
-    redirect_to root_path
+    redirect_to thank_you_path
+  end
+
+  def thank_you
+    @order = current_user.orders.last
   end
 
   def index

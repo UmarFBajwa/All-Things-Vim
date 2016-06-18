@@ -1,0 +1,22 @@
+%h1 Thank You!
+
+%h3 Summary
+%p
+  %ul
+    %li
+      Number of Items:
+      = @order.total_items
+    %li
+      Total:
+      = number_to_currency(@order.total_cost)
+%h3 Details:
+- @order.ordered_items.each do |ordered_item|
+  %h4= ordered_item.item.name
+  %p
+    %ul
+      %li
+        Quantity:
+        = ordered_item.order_quantity
+      %li
+        Price:
+        = number_to_currency(ordered_item.total_cost)
