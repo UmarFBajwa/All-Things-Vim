@@ -4,12 +4,13 @@ class OrdersController < ApplicationController
   end
 
   def update
-    message = []
+    messages = []
     @order = current_user.orders.where(checked_out: false).first
     @order.ordered_items.each do |ordered_item|
-      message << ordered_item.check_stock_availability
+      messages << ordered_item.check_stock_availability
     end
-    flash[:warning] = message.join(', ') +'.'
+
+    flash[:warning] = messages.join(', ') unless messages.empty?
     @order.checked_out = true
     @order.save
     # Mail them
@@ -20,6 +21,5 @@ class OrdersController < ApplicationController
   def index
     @orders = Order.where(user_id: current_user.id)
   end
-
 
 end
