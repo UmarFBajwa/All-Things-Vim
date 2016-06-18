@@ -12,7 +12,13 @@
             = "Price: #{number_to_currency(ordered_item.item.price)}"
             %br
             = "Stock: #{ordered_item.item.quantity}"
-        = "Amount Ordered: #{ordered_item.order_quantity}"
+        Amount Ordered:
+        = form_for :ordered_item, {url: ordered_item_path(ordered_item), method: 'put'} do |f|
+          = f.number_field :order_quantity, { value:ordered_item.order_quantity }
+          = f.hidden_field :id, { value: ordered_item.id }
+          = f.submit 'Update Quantity'
+
+
         %hr
 
   = form_for :orders, {url: checkout_path, method: 'put'} do |f|

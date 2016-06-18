@@ -16,4 +16,8 @@ class OrdersController < ApplicationController
     # redirect_to thank_you_path
     redirect_to root_path
   end
+
+
+
+
 end

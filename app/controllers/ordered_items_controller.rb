@@ -16,8 +16,17 @@ class OrderedItemsController < ApplicationController
     end
   end
 
+  def update
+    ordered_item = OrderedItem.find(params[:ordered_item][:id])
+    ordered_item.update(ordered_item_params)
+    redirect_to my_cart_path
+  end
+
+
+
+
   private
   def ordered_item_params
-    params.require(:ordered_item).permit(:order_id, :item_id, :order_quantity)
+    params.require(:ordered_item).permit(:order_id, :item_id, :order_quantity, :id)
   end
 end
