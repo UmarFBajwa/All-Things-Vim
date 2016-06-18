@@ -1,0 +1,21 @@
+%h1 Order history
+
+- @orders.each do |order|
+  %h4
+    = order.created_at
+    %small
+      Number of Items:
+      = order.total_items
+      |
+      Total:
+      = number_to_currency(order.total_cost)
+  - order.ordered_items.each do |ordered_item|
+    %h6
+      = ordered_item.item.name
+      %ul
+        %li
+          Quantity:
+          = ordered_item.order_quantity
+        %li
+          Price:
+          = number_to_currency(ordered_item.total_cost)

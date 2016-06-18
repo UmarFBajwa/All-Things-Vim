@@ -16,4 +16,11 @@ class OrderedItem < ActiveRecord::Base
     save
     message
   end
+
+  def total_cost
+    self.item.price * self.order_quantity
+  end
+
+
+
 end

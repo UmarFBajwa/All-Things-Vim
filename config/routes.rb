@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/my_cart', to: 'orders#basket'
   put '/checkout', to: 'orders#update'
 
+  resources :orders, only: [:update, :index]
+
   root 'categories#index'
 
   get '/admin', to: 'admins#index'

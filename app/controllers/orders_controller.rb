@@ -17,4 +17,9 @@ class OrdersController < ApplicationController
     redirect_to root_path
   end
 
+  def index
+    @orders = Order.where(user_id: current_user.id)
+  end
+
+
 end
