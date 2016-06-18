@@ -13,12 +13,15 @@
           %br
           %span.item-a=link_to 'Show', item_path(item)
           %br
-          -if current_user
-            = form_for(:ordered_item, {url: ordered_items_path, html: {class: 'addItem'}}) do |f|
-              = f.number_field :order_quantity
-              = f.hidden_field :item_id, {value: item.id}
-              = f.submit "Add to basket"
-            -if current_user.admin
+          - if current_user
+            - if item.quantity != 0
+              = form_for(:ordered_item, {url: ordered_items_path, html: {class: 'addItem'}}) do |f|
+                = f.number_field :order_quantity
+                = f.hidden_field :item_id, {value: item.id}
+                = f.submit "Add to basket"
+            - else
+              %p.text-danger Out of stock
+            - if current_user.admin
               %br
               %span.item-a=link_to 'Edit', edit_item_path(item)
               %span.item-a=link_to 'Delete', item_path(item), method: :delete, data: {confirm: 'Are you sure?'}
