@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Vim Shop
+    %title= yield(:title)
     %link{:href => 'http://vignette1.wikia.nocookie.net/vim/images/6/68/Vim-editor_logo.png', :rel => "shortcut icon", :type => "image/png"}
 
     = javascript_include_tag 'application'
