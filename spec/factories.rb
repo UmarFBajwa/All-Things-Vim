@@ -1,12 +1,17 @@
 FactoryGirl.define do
   factory :ordered_item do
-    
+    association :order, factory: :order
+    association :item, factory: :item
+    order_quantity { rand(10) }
   end
-  factory :order do
-    
-  end
-  factory :categories_item do
 
+  factory :order do
+    association :user, factory: :user
+  end
+
+  factory :categories_item do
+    association :category, factory: :category
+    association :item, factory: :item
   end
 
   factory :category do

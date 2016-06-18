@@ -15,4 +15,22 @@ RSpec.describe CategoriesItem, type: :model do
       CategoriesItem.create(item_id: item.id, category_id: category.id)
     }.not_to change(CategoriesItem.all, :size)
   end
+
+  it 'factory is valid' do
+    categories_item = create :categories_item
+
+    expect(categories_item.valid?).to eq true
+  end
+
+  it 'factory creates an association with category' do
+    categories_item = create :categories_item
+
+    expect(categories_item.category).to be_a Category
+  end
+
+  it 'factory creates an association with an item' do
+    categories_item = create :categories_item
+
+    expect(categories_item.item).to be_an Item
+  end
 end
