@@ -17,7 +17,9 @@
           = f.number_field :order_quantity, { value:ordered_item.order_quantity }
           = f.hidden_field :id, { value: ordered_item.id }
           = f.submit 'Update Quantity'
-
+        = form_for :ordered_item, {url: ordered_item_path(ordered_item), method: 'delete'} do |f|
+          = f.hidden_field :id, { value: ordered_item.id }
+          = f.submit 'Remove from basket'
 
         %hr
 

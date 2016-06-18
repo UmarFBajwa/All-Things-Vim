@@ -22,7 +22,11 @@ class OrderedItemsController < ApplicationController
     redirect_to my_cart_path
   end
 
-
+  def destroy
+    ordered_item = OrderedItem.find(params[:ordered_item][:id])
+    ordered_item.delete
+    redirect_to my_cart_path
+  end
 
 
   private
