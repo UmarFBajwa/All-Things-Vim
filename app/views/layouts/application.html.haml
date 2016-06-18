@@ -2,7 +2,8 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Shoppe
+    %title= yield(:title)
+    %link{:href => 'http://vignette1.wikia.nocookie.net/vim/images/6/68/Vim-editor_logo.png', :rel => "shortcut icon", :type => "image/png"}
 
     = javascript_include_tag 'application'
     = csrf_meta_tags
@@ -23,6 +24,10 @@
             -if logged_in
               %li
                 = link_to 'My Cart', my_cart_path
+              %li
+                = link_to 'My Orders', orders_path
+              %li
+                = link_to 'My Profile', user_path(current_user)
               -if current_user.admin
                 %li.navbaritem
                   =link_to 'Admin', admin_path

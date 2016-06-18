@@ -4,26 +4,25 @@ class OrdersController < ApplicationController
   end
 
   def update
-    message = []
+    messages = []
     @order = current_user.orders.where(checked_out: false).first
     @order.ordered_items.each do |ordered_item|
-      stock = ordered_item.item.quantity
-      amount = ordered_item.order_quantity
-      if stock > amount
-        ordered_item.item.quantity -= amount
-      else
-        message << "We couldn't order #{amount-stock} of #{ordered_item.item.name}"
-        ordered_item.order_quantity = stock
-        ordered_item.item.quantity = 0
-      end
-      ordered_item.item.save
-      ordered_item.save
+      messages << ordered_item.check_stock_availability
     end
-    flash[:warning] = message.join(', ') +'.'
+
+    flash[:warning] = messages.join(', ') unless messages.join.empty?
     @order.checked_out = true
     @order.save
-    # Mail them
-    # redirect_to thank_you_path
-    redirect_to root_path
+    OrderMailer.order_confirmation(current_user).deliver_now
+    redirect_to thank_you_path
   end
+
+  def thank_you
+    @order = current_user.orders.last
+  end
+
+  def index
+    @orders = Order.where(user_id: current_user.id)
+  end
+
 end

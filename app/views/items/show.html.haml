@@ -1,6 +1,8 @@
+- content_for :title, "Vim Shop - #{@item.name}"
+
 %center
   %h1
-    = @item.name.upcase
+    = @item.name
 
   %div.jumbotron
     %img{src: @item.image_url}
