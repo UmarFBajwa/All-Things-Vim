@@ -72,4 +72,57 @@ RSpec.describe OrdersController, type: :controller do
       expect(response).to redirect_to thank_you_path
     end
   end
+
+  context '#thank_you' do
+    before(:each) do
+      @user = create :user
+    end
+
+    it 'renders the thank you view' do
+      get :thank_you, {}, {user_id: @user.id}
+
+      expect(response).to have_rendered :thank_you
+    end
+
+    it 'returns a success status' do
+      get :thank_you, {}, {user_id: @user.id}
+
+      expect(response.status).to eq 200
+    end
+
+    it 'assigns the order instance var' do
+      order = create(:order, user: @user)
+
+      get :thank_you, {}, { user_id: @user.id}
+
+      expect(assigns[:order]).to eq order
+    end
+  end
+
+  context '#index' do
+    before(:each) do
+      @user = create :user
+    end
+
+    it 'renders the index view' do
+      get :index, {}, { user_id: @user.id}
+
+      expect(response).to have_rendered :index
+    end
+
+    it 'returns a sucees status' do
+      get :index, {}, { user_id: @user.id}
+
+      expect(response.status).to eq 200
+    end
+
+    it 'assigns orders to a collection of orders' do
+      first = create(:order, user: @user)
+      second = create(:order, user: @user)
+
+      get :index, {}, { user_id: @user.id}
+
+      expect(assigns[:orders]).to eq [first, second]
+    end
+  end
 end
