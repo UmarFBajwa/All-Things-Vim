@@ -26,4 +26,5 @@ group :development, :test do
   gem 'chromedriver-helper'
   gem 'database_cleaner'
   gem 'dotenv-rails'
+  gem 'rack_session_access'
 end

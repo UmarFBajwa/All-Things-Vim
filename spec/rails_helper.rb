@@ -4,6 +4,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
+require "rack_session_access/capybara"
 
 
 ActiveRecord::Migration.maintain_test_schema!
@@ -14,7 +15,6 @@ end
 
 RSpec.configure do |config|
   include FactoryGirl::Syntax::Methods
-
   config.use_transactional_fixtures = false
 
   config.before(:suite) do

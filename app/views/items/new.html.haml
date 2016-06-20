@@ -18,7 +18,7 @@
       = label_tag :categories
       - @categories.each do |category|
         = label_tag category.name
-        = check_box_tag 'categories[]', category.id, @item.categories.include?(category)
+        = check_box_tag 'categories[]', category.id, @item.categories.include?(category), id: "category-#{category.id}"
 
     .form_field
       = label_tag :price
@@ -30,7 +30,7 @@
 
     .form_field
       = label_tag :description
-      = text_field_tag 'item[description', @item.description
+      = text_field_tag 'item[description]', @item.description
 
     .form_field
       = label_tag :image_url
