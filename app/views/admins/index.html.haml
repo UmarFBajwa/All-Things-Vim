@@ -29,7 +29,7 @@
         %th.admin-table-header Delete
     %tbody
       -@items.each do |item|
-        %tr
+        %tr{id: "item-#{item.id}"}
           %td.admin-table
             =item.name
           %td.admin-table
