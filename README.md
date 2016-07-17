@@ -7,7 +7,7 @@ The stack is Ruby on Rails, PostgreSQL, JavaScript (AJAX and the JQuery library)
 
 The functionality includes user authentication, admin roles, article management, inventory management and checkout.
 
-## Methodology
+## Challenge structure
 * Day 1:
   * Create and document user stories in Trello board
   * Whiteboard basuc mockups and user flows
