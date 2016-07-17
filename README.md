@@ -29,6 +29,17 @@ The functionality includes user authentication, admin roles, article management,
   * Update tests
   * __Swap code base__
 
+* Day 4:
+  * Shopping cart + 'add to cart' functionality
+  * Ajaxiying user interface
+  * Error handling
+    * if order exceeds available stock
+    * if out of stock, disable 'add to cart'disble'
+  * Price calculation of order
+  * Ordering + confirmation e-mails
+  * Order overview page
+  * Update tests
+
 
 # TO DO >>>>>
 
