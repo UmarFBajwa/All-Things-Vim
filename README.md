@@ -1,4 +1,15 @@
-# MVP 1
+# Vim Shop
+
+## Summary
+A Rails app built over the course of a 1 week educational game, attempting to replicate real world project deadlines and regular changes of requirements. Next to daily requirement requests, the code-base was swapped among teams of 2 persons to learn from other's coding styles and build on an existing archtiecture.
+
+The stack is Ruby on Rails, PostgreSQL, JavaScript (AJAX and the JQuery library) and Bootstrap CSS (combined with custom elements).
+
+The functionality includes user authentication, admin roles, article management, inventory management and checkout.
+
+# TO DO >>>>>
+
+MVP 1
 
 # FIRST ITERATION
 
