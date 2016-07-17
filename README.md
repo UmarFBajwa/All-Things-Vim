@@ -16,10 +16,19 @@ The functionality includes user authentication, admin roles, article management,
   * Create product catalog with a seed file and a user interface
 
 * Day 2:
-  * User authentication
+  * Basic authentication
   * Stock management
   * Admin panel + CRUD functionality on articles
   * Flash messages (success & failure)
+  * Update tests
+
+* Day 3:
+  * User authentication
+  * Classification of products in categories
+  * ActionMailer for welcome e-mails to users who crete an account
+  * Update tests
+  * __Swap code base__
+
 
 # TO DO >>>>>
 
