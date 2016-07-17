@@ -1,7 +1,12 @@
 # Vim Shop
 
 ## Summary
-A Rails app built over the course of a 1 week educational game, attempting to replicate real world project deadlines and regular changes of requirements. Next to daily requirement requests, the code-base was swapped among teams of 2 persons to learn from other's coding styles and build on an existing archtiecture.
+A Rails app built over the course of a 1 week educational game, attempting to replicate real world situations:
+* Project deadlines
+* Regular changes of requirements
+* Presentation to non-tech 'customer'
+
+Next to daily requirement requests, the code-base was swapped among teams of 2 persons to learn from other's coding styles and build on an existing architecture.
 
 The stack is Ruby on Rails, PostgreSQL, JavaScript (AJAX and the JQuery library), HAML and Bootstrap CSS (combined with custom elements).
 
@@ -13,8 +18,8 @@ The functionality includes user authentication, admin roles, article management,
   * Create and document user stories in Trello board
   * Whiteboard basuc mockups and user flows
   * Design Schema
-  * Write model, controller and feature tests
   * Create product catalog with a seed file and a user interface
+  * Write model, controller and feature tests
 
 * Day 2:
   * Basic authentication
@@ -40,6 +45,11 @@ The functionality includes user authentication, admin roles, article management,
   * Ordering + confirmation e-mails
   * Order overview page
   * Update tests
+
+* Day 5:
+  * Finish uncompleted work
+  * Refactor
+  * Review tests for completeness
 
 
 # TO DO >>>>>
