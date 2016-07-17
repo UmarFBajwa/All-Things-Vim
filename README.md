@@ -9,6 +9,7 @@ The functionality includes user authentication, admin roles, article management,
 
 ## Challenge structure
 * Day 1:
+  * Learn Ruby On Rails + Testing
   * Create and document user stories in Trello board
   * Whiteboard basuc mockups and user flows
   * Design Schema
