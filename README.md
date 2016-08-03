@@ -1,4 +1,4 @@
-# Vim Shop
+# All Things Vim
 
 ## Summary
 A Rails app built over the course of a 1 week educational game, attempting to replicate real world situations:
