@@ -11,6 +11,8 @@ gem 'jquery-rails'
 gem 'haml-rails'
 gem 'rails_12factor', group: :production
 gem 'delayed_job_active_record'
+gem 'stripe'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'pry-rails'
@@ -25,6 +27,5 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'database_cleaner'
-  gem 'dotenv-rails'
   gem 'rack_session_access'
 end

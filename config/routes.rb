@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :items
   resources :categories
   resources :ordered_items, only: [:create, :update, :destroy]
+  resources :checkouts
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
 
   get '/my_cart', to: 'orders#basket'
-  put '/checkout', to: 'orders#update'
+  put '/basket', to: 'orders#update'
   get '/thank_you', to: 'orders#thank_you'
 
   resources :orders, only: [:update, :index]
