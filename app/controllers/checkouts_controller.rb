@@ -1,19 +1,15 @@
 require 'stripe'
 class CheckoutsController < ApplicationController
 
-Stripe.api_key = ENV['TEST_SECRET_KEY']
+  Stripe.api_key = ENV['TEST_SECRET_KEY']
 
   def create
-    p '*'*50
-    p params
 
     token = params[:stripeToken]
 
     customer = Stripe::Customer.create(
-      :source => token,
-      :description => "Example customer, so whatssssupppppp"
-    )
-
+      source: token,
+      description: "This is an example customer, yo.")
     # added stripe_customer_id to user model
 
     # saves cc number to user object
@@ -26,19 +22,20 @@ Stripe.api_key = ENV['TEST_SECRET_KEY']
     # sample logic for actually charging a user
 
     # amount_in_cents = XXXXX
-    # Stripe::Charge.create(
+    # charge = Stripe::Charge.create(
     #   :amount => amount_in_cents, # in cents
     #   :currency => "usd",
     #   :customer => @user.stripe_customer_id
     # )
 
     redirect_to root_path
+
   end
 
 
 
 
-def show
-end
+  def show
+  end
 
 end
