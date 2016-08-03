@@ -1,7 +1,7 @@
 .container-fluid
   .row-fluid
     / docs say we shouldn't give names to form elements bc of sensitive data
-    %form#payment-form{:action => "/card", :method => "POST"}
+    %form#payment-form{:action => "/checkouts", :method => "POST"}
       %span.payment-errors
       .form-row
         %label
@@ -18,4 +18,3 @@
           %span CVC
           %input{"data-stripe" => "cvc", :size => "4", :type => "text"}/
       %input.submit{:type => "submit", :value => "Submit Payment"}/
-
