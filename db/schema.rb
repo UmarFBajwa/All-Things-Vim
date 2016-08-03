@@ -72,11 +72,12 @@ ActiveRecord::Schema.define(version: 20160617183848) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
+    t.string   "stripe_customer_id"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.boolean  "admin",           default: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.boolean  "admin",              default: false
   end
 
 end
