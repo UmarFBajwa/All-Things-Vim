@@ -1,0 +1,39 @@
+%h1
+  Is this correct?
+
+%div
+  %h2
+    My Cart
+    %small
+      Number of Items:
+      = @order.total_items
+      |
+      Total:
+      = number_to_currency(@order.total_cost)
+
+    %ul
+      - @order.ordered_items.each do |ordered_item|
+        %li
+          = ordered_item.item.name
+          %ul
+            %li
+              = "Price: #{number_to_currency(ordered_item.item.price)}"
+              %br
+              = "Stock: #{ordered_item.item.quantity}"
+          Amount Ordered:
+          = form_for :ordered_item, {url: ordered_item_path(ordered_item), method: 'put'} do |f|
+            = f.number_field :order_quantity, { value:ordered_item.order_quantity }
+            = f.hidden_field :id, { value: ordered_item.id }
+            = f.submit 'Update Quantity'
+          = form_for :ordered_item, {url: ordered_item_path(ordered_item), method: 'delete'} do |f|
+            = f.hidden_field :id, { value: ordered_item.id }
+            = f.submit 'Remove from basket'
+
+          %hr
+
+  %h2
+    Stripe Customer ID that you shouldn't know and can't do much with:
+  %h3
+    = @user.stripe_customer_id
+
+

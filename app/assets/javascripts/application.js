@@ -9,11 +9,14 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
+// //
+// = require jquery
+// = require jquery_ujs
+// = require_tree .
 $(document).ready(function(){
+
+// alert('hello')
+
   $(function() {
     var $form = $('#payment-form');
     $form.submit(function(event) {
@@ -22,7 +25,6 @@ $(document).ready(function(){
 
       // Request a token from Stripe:
       Stripe.card.createToken($form, stripeResponseHandler);
-
       // Prevent the form from being submitted:
       return false;
     });
@@ -51,4 +53,6 @@ $(document).ready(function(){
       $form.get(0).submit();
     }
   };
+
+
 });
