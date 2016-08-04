@@ -1,7 +1,7 @@
 // $(document).ready(function(){
 
+//   alert('hello from public')
 //   $(function() {
-//     debugger
 //     var $form = $('#payment-form');
 //     $form.submit(function(event) {
 //       // Disable the submit button to prevent repeated clicks:
@@ -29,6 +29,7 @@
 
 //       // Get the token ID:
 //       var token = response.id;
+//       debugger;
 
 //       // Insert the token ID into the form so it gets submitted to the server:
 //       // Multiple ways to do this.

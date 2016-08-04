@@ -5,19 +5,20 @@ class CheckoutsController < ApplicationController
   Stripe.api_key = ENV['TEST_SECRET_KEY']
 
   def create
-
     token = params[:stripeToken]
-    p token
     customer = Stripe::Customer.create(
       source: token,
       description: "This is an example customer, yo.")
     # added stripe_customer_id to user model
-    p customer
     # saves cc number to user object
 
-    current_user.stripe_customer_id = customer.id
-    current_user.save
 
+    user = current_user
+    p user
+    user.update!(stripe_customer_id: customer.id)
+    p user
+
+    # sleep(10)
 
     # sample logic for actually charging a user
 

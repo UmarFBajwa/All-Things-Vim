@@ -1,9 +1,16 @@
 !!!
 %html
   %head
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+    <script type="text/javascript"> Stripe.setPublishableKey('pk_test_lIE7BStz6qe5AwnvamiThBA7');</script>
+
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title= yield(:title)
     %link{:href => 'http://vignette1.wikia.nocookie.net/vim/images/6/68/Vim-editor_logo.png', :rel => "shortcut icon", :type => "image/png"}
+
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
