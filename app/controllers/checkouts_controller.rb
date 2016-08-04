@@ -1,4 +1,5 @@
 require 'stripe'
+
 class CheckoutsController < ApplicationController
 
   Stripe.api_key = ENV['TEST_SECRET_KEY']
@@ -6,18 +7,17 @@ class CheckoutsController < ApplicationController
   def create
 
     token = params[:stripeToken]
-
+    p token
     customer = Stripe::Customer.create(
       source: token,
       description: "This is an example customer, yo.")
     # added stripe_customer_id to user model
-
+    p customer
     # saves cc number to user object
-    @user = current_user
-    @user.stripe_customer_id = customer.id
-    @user.save
 
-    p @user
+    current_user.stripe_customer_id = customer.id
+    current_user.save
+
 
     # sample logic for actually charging a user
 
@@ -28,10 +28,17 @@ class CheckoutsController < ApplicationController
     #   :customer => @user.stripe_customer_id
     # )
 
-    redirect_to root_path
+    redirect_to '/checkouts/confirm'
 
   end
 
+  def confirm
+    @order = current_user.orders.where(checked_out: false).first
+    @user = current_user
+    # @customer_id = @user.stripe_customer_id
+
+    render '/checkouts/confirm'
+  end
 
 
 

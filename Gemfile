@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'bcrypt'
 gem 'pg'
+gem 'dotenv-rails'
+gem 'stripe'
+
 
 gem 'uglifier'
 gem 'thin'
